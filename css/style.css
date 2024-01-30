@@ -1,0 +1,278 @@
+/* Fuentes */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* CSS global */
+
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Reset tamaño caja */
+* ::after,
+* ::before {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  background: #f3f5fc;
+}
+
+img {
+  max-width: 100%;
+}
+
+header,
+footer {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+/* Cabezera */
+
+header {
+  position: absolute;
+  padding: 2em;
+}
+
+.logo {
+  margin-left: 2em;
+  width: 5em;
+}
+
+.titulo {
+  font-size: 2em;
+  font-weight: 400;
+  margin: 1em;
+  text-align: center;
+}
+
+/* Cuerpo de la pagina */
+
+main {
+  display: flex;
+}
+
+/* Entrada de texto */
+
+.entrada {
+  width: 60%;
+  margin: 140px 0px 0px 140px;
+}
+
+.entrada-texto {
+  width: 670px;
+  height: 448px;
+  font-size: 2em;
+  color: #0a3871;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.entrada-texto::placeholder {
+  color: #072b61;
+  opacity: 60%;
+}
+
+/* Texto aviso */
+
+.aviso {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5em;
+  margin: 1em 0 1em 0;
+}
+
+/* Botones */
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.btn-encriptar,
+.btn-desencriptar {
+  width: 327px;
+  font-size: 1em;
+  height: 65px;
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.btn-encriptar {
+  color: #ffffff;
+  background: #0a3871;
+}
+
+.btn-encriptar:hover,
+.btn-desencriptar:hover,
+.btn-copiar:hover {
+  transform: scale(0.98);
+}
+
+.btn-encriptar:active {
+  box-shadow: inset 2px 2px 4px #495057, inset 2px 2px 4px #495057;
+  color: #356ea9;
+}
+
+.btn-desencriptar:active,
+.btn-copiar:active {
+  box-shadow: inset 2px 2px 4px #495057, inset 2px 2px 4px #495057;
+  color: #868e96;
+}
+
+/* salida */
+
+.salida {
+  position: relative;
+  display: grid;
+  align-items: center;
+  width: 340px;
+  gap: 1em;
+  border: none;
+  margin-top: 2em;
+  padding: 1em;
+  box-shadow: 10px 24px 32px -8px #adb5bd;
+  border-radius: 32px;
+  background: #ffffff;
+  outline: none;
+}
+
+.salida-aviso {
+  position: absolute;
+  text-align: center;
+  color: #495057;
+}
+
+.img-muneco {
+  width: 280px;
+}
+
+.texto-uno {
+  line-height: 1.3em;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.texto-dos {
+  line-height: 1.3em;
+}
+
+.salida-texto {
+  position: relative;
+  background: transparent;
+  font-size: 2em;
+  font-weight: 400;
+  width: auto;
+  height: 573px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.btn-copiar {
+  position: relative;
+  visibility: hidden;
+  width: 327;
+  font-size: 1em;
+  height: 65px;
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+/* Pie de pagina */
+
+footer {
+  padding: 1em;
+  margin-top: 1em;
+  border-top: 0.08em solid #575757;
+  text-align: center;
+}
+
+/* CSS adaptativo */
+@media (max-width: 1250px) {
+  header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    margin: 0;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .entrada {
+    margin: 168px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .aviso {
+    display: flex;
+    justify-content: center;
+  }
+
+  .salida {
+    display: grid;
+    width: 670px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .salida-aviso {
+    margin: 0;
+  }
+
+  .salida-texto {
+    width: 630px;
+    height: 338px;
+  }
+
+  .btn-copiar {
+    width: 327px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .entrada-texto {
+    width: 90%;
+  }
+
+  .botones {
+    display: grid;
+    width: 90%;
+  }
+
+  .btn-encriptar,
+  .btn-desencriptar {
+    width: 100%;
+  }
+
+  .salida {
+    width: 90%;
+  }
+
+  .salida-texto {
+    width: 100%;
+  }
+
+  .btn-copiar {
+    width: 100%;
+  }
+}
