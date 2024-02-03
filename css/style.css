@@ -1,12 +1,18 @@
 /* Fuentes */
-
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@font-face {
+  font-family: "interregular";
+  src: url("/fonts/inter-variablefont_slntwght-webfont.woff2") format("woff2"),
+    url("/fonts/inter-variablefont_slntwght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* CSS global */
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "interregular", sans-serif;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 /* Reset tamaño caja */
@@ -17,35 +23,25 @@
 
 body {
   height: 100%;
-  background: #f3f5fc;
+  background: #c9f2ff;
 }
 
 img {
   max-width: 100%;
 }
 
-header,
-footer {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-}
 /* Cabezera */
 
 header {
   position: absolute;
-  padding: 2em;
+  padding: 2rem;
 }
 
-.logo {
-  margin-left: 2em;
-  width: 5em;
-}
-
-.titulo {
-  font-size: 2em;
-  font-weight: 400;
-  margin: 1em;
-  text-align: center;
+#titulo-principal {
+  font-family: "interregular", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #664103;
 }
 
 /* Cuerpo de la pagina */
@@ -61,31 +57,35 @@ main {
   margin: 140px 0px 0px 140px;
 }
 
-.entrada-texto {
+#entrada-texto {
   width: 670px;
+  padding: 1rem;
   height: 448px;
-  font-size: 2em;
-  color: #0a3871;
-  background: transparent;
+  font-size: 2rem;
+  color: #664103;
+  background: #ffffff;
+  border-radius: 2rem;
   border: none;
   outline: none;
   resize: none;
+  box-shadow: inset 2px 2px 4px #495057, inset 2px 2px 4px #495057;
 }
 
-.entrada-texto::placeholder {
-  color: #072b61;
+#entrada-texto::placeholder {
+  color: #cc7000;
   opacity: 60%;
 }
 
 /* Texto aviso */
 
 .aviso {
+  color: #664103;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 100%;
-  gap: 0.5em;
-  margin: 1em 0 1em 0;
+  width: auto;
+  gap: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 
 /* Botones */
@@ -94,22 +94,29 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1em;
+  gap: 1rem;
 }
 
 .btn-encriptar,
-.btn-desencriptar {
+.btn-desencriptar,
+.btn-copiar {
+  font-size: 1rem;
   width: 327px;
-  font-size: 1em;
   height: 65px;
-  border: 1px solid #0a3871;
+  border: 1px solid #664103;
   border-radius: 24px;
   cursor: pointer;
 }
 
 .btn-encriptar {
   color: #ffffff;
-  background: #0a3871;
+  background: #664103;
+}
+
+.btn-copiar,
+.btn-desencriptar {
+  color: #664103;
+  background: #fff799;
 }
 
 .btn-encriptar:hover,
@@ -120,7 +127,7 @@ main {
 
 .btn-encriptar:active {
   box-shadow: inset 2px 2px 4px #495057, inset 2px 2px 4px #495057;
-  color: #356ea9;
+  color: #000000;
 }
 
 .btn-desencriptar:active,
@@ -135,13 +142,13 @@ main {
   position: relative;
   display: grid;
   align-items: center;
-  width: 340px;
-  gap: 1em;
+  width: auto;
+  gap: 1rem;
   border: none;
-  margin-top: 2em;
-  padding: 1em;
+  margin-top: 2rem;
+  padding: 1rem;
   box-shadow: 10px 24px 32px -8px #adb5bd;
-  border-radius: 32px;
+  border-radius: 2rem;
   background: #ffffff;
   outline: none;
 }
@@ -149,11 +156,12 @@ main {
 .salida-aviso {
   position: absolute;
   text-align: center;
-  color: #495057;
+  color: #664103;
 }
 
 .img-muneco {
-  width: 280px;
+  width: 200px;
+  margin-bottom: 3rem;
 }
 
 .texto-uno {
@@ -166,12 +174,12 @@ main {
   line-height: 1.3em;
 }
 
-.salida-texto {
+#salida-texto {
   position: relative;
   background: transparent;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 400;
-  width: auto;
+  width: 327px;
   height: 573px;
   border: none;
   outline: none;
@@ -181,20 +189,16 @@ main {
 .btn-copiar {
   position: relative;
   visibility: hidden;
-  width: 327;
-  font-size: 1em;
-  height: 65px;
-  border: 1px solid #0a3871;
-  border-radius: 24px;
-  cursor: pointer;
 }
 
 /* Pie de pagina */
 
 footer {
-  padding: 1em;
-  margin-top: 1em;
-  border-top: 0.08em solid #575757;
+  padding: 1rem;
+  color: #664103;
+  margin-top: 1rem;
+  font-family: "interregular", sans-serif;
+  border-top: 0.08em solid #664103;
   text-align: center;
 }
 
@@ -205,10 +209,12 @@ footer {
     text-align: center;
   }
 
-  .logo {
+  .salida-aviso {
     margin: 0;
   }
-  main {
+
+  main,
+  .entrada {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,11 +222,7 @@ footer {
   }
 
   .entrada {
-    margin: 168px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    margin: 138px 0 0 0;
   }
 
   .aviso {
@@ -235,44 +237,32 @@ footer {
     justify-items: center;
   }
 
-  .salida-aviso {
-    margin: 0;
-  }
-
-  .salida-texto {
-    width: 630px;
+  #salida-texto {
+    width: 100%;
     height: 338px;
   }
 
   .btn-copiar {
-    width: 327px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 720px) {
-  .entrada-texto {
+  #entrada-texto,
+  .aviso,
+  .botones,
+  .salida {
     width: 90%;
   }
 
   .botones {
     display: grid;
-    width: 90%;
   }
 
   .btn-encriptar,
-  .btn-desencriptar {
-    width: 100%;
-  }
-
-  .salida {
-    width: 90%;
-  }
-
-  .salida-texto {
-    width: 100%;
-  }
-
+  .btn-desencriptar,
   .btn-copiar {
     width: 100%;
+    font-size: 1.1rem;
   }
 }
