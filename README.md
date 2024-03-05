@@ -7,3 +7,6 @@ Además del entretenimiento, también puede usarse como un modo de codificar el 
 Estas variantes se dan como juego o entretenimiento en países de habla castellana como España e Hispanoamérica.
 
 [Wiki](https://es.wikipedia.org/wiki/Jerigonza)
+
+### Enlace
+[Ver web](https://zelys.github.io/jerigonza-es)
